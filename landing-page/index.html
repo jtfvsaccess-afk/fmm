@@ -153,6 +153,9 @@
         <span class="trust-item">✅ Same-Day Available</span>
         <span class="trust-item">✅ 247+ 5-Star Reviews</span>
       </div>
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); text-align:center; margin-top:12px; margin-bottom:0">
+        Serving Fort Myers · Cape Coral · Naples · Bonita Springs · Estero
+      </p>
     </div>
 
     <!-- Hero Quick Quote Card -->
@@ -199,6 +202,166 @@
     </div>
   </div>
 </div>
+
+<!-- ===== SINGLE-PAGE QUOTE FORM ===== -->
+<section class="section" id="get-quote" style="background:white">
+  <div class="container">
+    <div class="section-title fade-up">
+      <span class="label">Free Quote · Takes 60 Seconds</span>
+      <h2 class="headline-section">Tell Us About Your Move</h2>
+      <p>Get your price instantly — no commitment, no surprise fees.</p>
+    </div>
+    <div class="quote-layout fade-up">
+      <!-- LEFT: Social proof (desktop) / shown below form on mobile -->
+      <div class="quote-layout-trust">
+        <div class="review-card" style="background:white; border:2px solid #e2e8f0; border-radius:16px; padding:24px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+          <div style="color:#f59e0b; font-size:1.1rem; margin-bottom:8px">★★★★★</div>
+          <p style="font-size:0.9rem; font-style:italic; color:#334155; line-height:1.6; margin-bottom:12px">"Absolutely incredible service. Two guys showed up on time, were incredibly careful with all our furniture, and finished ahead of schedule. Best movers in Fort Myers, hands down."</p>
+          <p style="font-size:0.8rem; font-weight:600; color:#64748b">— Maria S., Fort Myers · Verified Thumbtack Review</p>
+        </div>
+        <div class="quote-trust-signals">
+          <div class="quote-trust-signal">Licensed &amp; Insured</div>
+          <div class="quote-trust-signal">Thumbtack Top Pro 2024</div>
+          <div class="quote-trust-signal">Same-Day Available</div>
+          <div class="quote-trust-signal">247+ 5-Star Reviews</div>
+          <div class="quote-trust-signal">No Hidden Fees</div>
+        </div>
+      </div>
+      <!-- RIGHT: Quote form -->
+      <div class="quote-layout-form">
+        <div class="quote-form-card">
+          <!-- Move type -->
+          <div class="form-field">
+            <label class="form-label" for="fmm-move-type">Move Type</label>
+            <select id="fmm-move-type" class="form-select">
+              <option value="local">🏠 Local Move (Within 50 miles)</option>
+              <option value="long-distance">🚛 Long-Distance Move</option>
+            </select>
+          </div>
+          <!-- Home size -->
+          <div class="form-field">
+            <label class="form-label" for="fmm-bedrooms">Home Size</label>
+            <select id="fmm-bedrooms" class="form-select">
+              <option value="1">1 Bedroom</option>
+              <option value="2" selected>2 Bedrooms</option>
+              <option value="3">3 Bedrooms</option>
+              <option value="4">4 Bedrooms</option>
+              <option value="5">5+ Bedrooms</option>
+            </select>
+            <p class="field-hint">Select your home size — we'll show your crew and hours instantly</p>
+          </div>
+          <!-- Crew estimate (dynamic) -->
+          <div class="crew-estimate">
+            <div class="crew-stat">
+              <span class="crew-label">Movers Included</span>
+              <span class="crew-value" id="fmm-movers-count">2 Movers</span>
+            </div>
+            <div class="crew-divider"></div>
+            <div class="crew-stat">
+              <span class="crew-label">Hours Included</span>
+              <span class="crew-value" id="fmm-hours-count">4 Hours</span>
+            </div>
+          </div>
+          <!-- Contact info -->
+          <div class="form-field">
+            <label class="form-label" for="fmm-name">Full Name *</label>
+            <input type="text" id="fmm-name" class="form-input" placeholder="Jane Doe" autocomplete="name">
+          </div>
+          <div class="form-row-2">
+            <div class="form-field" style="margin-bottom:0">
+              <label class="form-label" for="fmm-email">Email *</label>
+              <input type="email" id="fmm-email" class="form-input" placeholder="jane@example.com" autocomplete="email">
+            </div>
+            <div class="form-field" style="margin-bottom:0">
+              <label class="form-label" for="fmm-phone">Phone *</label>
+              <input type="tel" id="fmm-phone" class="form-input" placeholder="(239) 555-0100" autocomplete="tel">
+              <p class="field-hint">We'll text your quote in minutes</p>
+            </div>
+          </div>
+          <!-- Move date -->
+          <div class="form-field">
+            <label class="form-label" for="fmm-date">Target Move Date *</label>
+            <input type="date" id="fmm-date" class="form-input">
+            <p class="field-hint">Don't have a date yet? Estimate — we'll confirm on the call.</p>
+          </div>
+          <!-- Addresses -->
+          <div class="form-field">
+            <label class="form-label" for="fmm-from">Moving From *</label>
+            <input type="text" id="fmm-from" class="form-input" placeholder="123 Main St, Fort Myers, FL">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="fmm-to">Moving To *</label>
+            <input type="text" id="fmm-to" class="form-input" placeholder="456 Oak Ave, Cape Coral, FL">
+          </div>
+          <!-- Optional upgrades -->
+          <div class="upgrades-section">
+            <div class="upgrades-title">🚛 Optional Add-Ons</div>
+            <label class="upgrade-item">
+              <input type="checkbox" class="upgrade-checkbox" data-addon="truck" data-price="150">
+              <div class="upgrade-info">
+                <span class="upgrade-name">Include Moving Truck</span>
+                <span class="upgrade-desc">26ft truck provided · +$150</span>
+              </div>
+            </label>
+            <label class="upgrade-item">
+              <input type="checkbox" class="upgrade-checkbox" data-addon="assembly" data-price="75">
+              <div class="upgrade-info">
+                <span class="upgrade-name">Bed Assembly / Disassembly</span>
+                <span class="upgrade-desc">All beds included · +$75</span>
+              </div>
+            </label>
+            <label class="upgrade-item">
+              <input type="checkbox" class="upgrade-checkbox" data-addon="stairs" data-price="50">
+              <div class="upgrade-info">
+                <span class="upgrade-name">Stairs Fee</span>
+                <span class="upgrade-desc">Per flight of stairs · +$50</span>
+              </div>
+            </label>
+          </div>
+          <!-- Price breakdown -->
+          <div class="price-summary">
+            <div class="price-line">
+              <span class="price-line-label" id="fmm-price-desc">Base Price (2 Bed, 2 movers, 4 hrs)</span>
+              <span class="price-line-value" id="fmm-base-price">$400</span>
+            </div>
+            <div class="price-line price-total-line">
+              <span class="price-line-label">Estimated Total</span>
+              <span class="price-total-value" id="fmm-total-price">$400</span>
+            </div>
+            <p class="price-deposit-note">Deposit to book: <strong>$75</strong> · Balance on move day · All equipment included</p>
+            <p class="price-overtime-note">Moves over the included hours billed at $100/hr</p>
+          </div>
+          <!-- Form (hidden fields, submit button) -->
+          <!-- ACTION REQUIRED: Go to https://formspree.io/forms, create a new form, copy the form ID, and replace REPLACE_WITH_FORMSPREE_ID below -->
+          <form id="fmm-quote-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+            <input type="hidden" name="_subject" value="New Moving Quote — Fort Myers Movers">
+            <input type="hidden" id="fmm-h-move-type" name="move_type" value="local">
+            <input type="hidden" id="fmm-h-bedrooms" name="bedrooms" value="2">
+            <input type="hidden" id="fmm-h-name" name="name" value="">
+            <input type="hidden" id="fmm-h-email" name="email" value="">
+            <input type="hidden" id="fmm-h-phone" name="phone" value="">
+            <input type="hidden" id="fmm-h-date" name="move_date" value="">
+            <input type="hidden" id="fmm-h-from" name="moving_from" value="">
+            <input type="hidden" id="fmm-h-to" name="moving_to" value="">
+            <input type="hidden" id="fmm-h-addons" name="addons" value="">
+            <input type="hidden" id="fmm-h-total" name="estimated_total" value="$400">
+            <button type="button" id="fmm-submit-btn" class="btn btn-primary btn-primary-xl" style="width:100%;margin-bottom:12px">Get My Free Quote 🚚</button>
+          </form>
+          <!-- Success / Error states -->
+          <div id="fmm-form-success" style="display:none; text-align:center; padding:32px 16px">
+            <div style="font-size:3rem; margin-bottom:12px">✅</div>
+            <h3 style="color:var(--color-primary); margin:0 0 8px">Got it! We'll call you within 15 minutes.</h3>
+            <p style="color:var(--color-text-muted); font-size:0.9rem">Check your phone — we'll text you a confirmation, too.</p>
+          </div>
+          <div id="fmm-form-error" style="display:none; text-align:center; padding:16px; color:var(--color-warning)">
+            Something went wrong. Please call us at <a href="tel:+19044798844" style="color:var(--color-accent); font-weight:600">(904) 479-8844</a>.
+          </div>
+          <p class="form-urgency-note">⚡ Next-day slots available — most requests confirmed within 2 hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== HOW IT WORKS ===== -->
 <section class="section" id="how-it-works">
@@ -525,7 +688,7 @@
           <span class="faq-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="faq-answer">
-          Labor-only moving means you provide the rental truck, PODS container, or storage unit — we provide 2–3 professional movers plus all equipment (dollies, furniture blankets, straps). We load everything carefully, you drive (or we arrange a truck for +$150), and we unload at the destination. You save 30–50% compared to full-service movers who charge for their own truck.
+          You provide the rental truck, PODS container, or storage unit — we provide 2–3 professional movers plus all equipment (dollies, blankets, straps). You save 30–50% compared to full-service movers.
         </div>
       </div>
 
@@ -545,7 +708,7 @@
           <span class="faq-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="faq-answer">
-          Yes. Fort Myers Labor Only Movers is fully licensed and insured in Florida. We are also a Thumbtack Top Pro — a designation earned by only the top 3% of service providers based on reviews, response rate, and verified hires.
+          Yes, fully licensed and insured in Florida. We're a Thumbtack Top Pro — top 3% of providers based on reviews and verified hires.
         </div>
       </div>
 
@@ -565,7 +728,7 @@
           <span class="faq-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="faq-answer">
-          Pricing is based on home size and starts at $300 for a 1-bedroom (2 movers, 3 hours). Overage is $100/hour. There are no hidden fees. The only charge at booking is a $75 deposit to hold your date — the balance is due on move day after the job is complete.
+          Pricing is based on home size, starting at $300 for a 1-bedroom. No hidden fees — only $75 at booking, balance due on move day.
         </div>
       </div>
 
@@ -575,166 +738,7 @@
           <span class="faq-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="faq-answer">
-          Base price includes 2–3 professional movers, all loading and unloading labor, dollies, furniture blankets, moving straps, and a guaranteed arrival window. Optional add-ons are available for rental truck arrangement (+$150), bed assembly/disassembly (+$75), stairs (+$50/flight), and packing service (+$100/room).
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SINGLE-PAGE QUOTE FORM ===== -->
-<section class="section" id="get-quote" style="background:white">
-  <div class="container">
-    <div class="section-title fade-up">
-      <span class="label">Free Quote · Takes 60 Seconds</span>
-      <h2 class="headline-section">Tell Us About Your Move</h2>
-      <p>Get your price instantly — no commitment, no surprise fees.</p>
-    </div>
-    <div class="quote-layout fade-up">
-      <!-- LEFT: Social proof (desktop) / shown below form on mobile -->
-      <div class="quote-layout-trust">
-        <div class="review-card" style="background:white; border:2px solid #e2e8f0; border-radius:16px; padding:24px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,0.06)">
-          <div style="color:#f59e0b; font-size:1.1rem; margin-bottom:8px">★★★★★</div>
-          <p style="font-size:0.9rem; font-style:italic; color:#334155; line-height:1.6; margin-bottom:12px">"Absolutely incredible service. Two guys showed up on time, were incredibly careful with all our furniture, and finished ahead of schedule. Best movers in Fort Myers, hands down."</p>
-          <p style="font-size:0.8rem; font-weight:600; color:#64748b">— Maria S., Fort Myers · Verified Thumbtack Review</p>
-        </div>
-        <div class="quote-trust-signals">
-          <div class="quote-trust-signal">Licensed &amp; Insured</div>
-          <div class="quote-trust-signal">Thumbtack Top Pro 2024</div>
-          <div class="quote-trust-signal">Same-Day Available</div>
-          <div class="quote-trust-signal">247+ 5-Star Reviews</div>
-          <div class="quote-trust-signal">No Hidden Fees</div>
-        </div>
-      </div>
-      <!-- RIGHT: Quote form -->
-      <div class="quote-layout-form">
-        <div class="quote-form-card">
-          <!-- Move type -->
-          <div class="form-field">
-            <label class="form-label" for="fmm-move-type">Move Type</label>
-            <select id="fmm-move-type" class="form-select">
-              <option value="local">🏠 Local Move (Within 50 miles)</option>
-              <option value="long-distance">🚛 Long-Distance Move</option>
-            </select>
-          </div>
-          <!-- Home size -->
-          <div class="form-field">
-            <label class="form-label" for="fmm-bedrooms">Home Size</label>
-            <select id="fmm-bedrooms" class="form-select">
-              <option value="1">1 Bedroom</option>
-              <option value="2" selected>2 Bedrooms</option>
-              <option value="3">3 Bedrooms</option>
-              <option value="4">4 Bedrooms</option>
-              <option value="5">5+ Bedrooms</option>
-            </select>
-            <p class="field-hint">Select your home size — we'll show your crew and hours instantly</p>
-          </div>
-          <!-- Crew estimate (dynamic) -->
-          <div class="crew-estimate">
-            <div class="crew-stat">
-              <span class="crew-label">Movers Included</span>
-              <span class="crew-value" id="fmm-movers-count">2 Movers</span>
-            </div>
-            <div class="crew-divider"></div>
-            <div class="crew-stat">
-              <span class="crew-label">Hours Included</span>
-              <span class="crew-value" id="fmm-hours-count">4 Hours</span>
-            </div>
-          </div>
-          <!-- Contact info -->
-          <div class="form-field">
-            <label class="form-label" for="fmm-name">Full Name *</label>
-            <input type="text" id="fmm-name" class="form-input" placeholder="Jane Doe" autocomplete="name">
-          </div>
-          <div class="form-row-2">
-            <div class="form-field" style="margin-bottom:0">
-              <label class="form-label" for="fmm-email">Email *</label>
-              <input type="email" id="fmm-email" class="form-input" placeholder="jane@example.com" autocomplete="email">
-            </div>
-            <div class="form-field" style="margin-bottom:0">
-              <label class="form-label" for="fmm-phone">Phone *</label>
-              <input type="tel" id="fmm-phone" class="form-input" placeholder="(239) 555-0100" autocomplete="tel">
-              <p class="field-hint">We'll text your quote in minutes</p>
-            </div>
-          </div>
-          <!-- Move date -->
-          <div class="form-field">
-            <label class="form-label" for="fmm-date">Target Move Date *</label>
-            <input type="date" id="fmm-date" class="form-input">
-            <p class="field-hint">Don't have a date yet? Estimate — we'll confirm on the call.</p>
-          </div>
-          <!-- Addresses -->
-          <div class="form-field">
-            <label class="form-label" for="fmm-from">Moving From *</label>
-            <input type="text" id="fmm-from" class="form-input" placeholder="123 Main St, Fort Myers, FL">
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="fmm-to">Moving To *</label>
-            <input type="text" id="fmm-to" class="form-input" placeholder="456 Oak Ave, Cape Coral, FL">
-          </div>
-          <!-- Optional upgrades -->
-          <div class="upgrades-section">
-            <div class="upgrades-title">🚛 Optional Add-Ons</div>
-            <label class="upgrade-item">
-              <input type="checkbox" class="upgrade-checkbox" data-addon="truck" data-price="150">
-              <div class="upgrade-info">
-                <span class="upgrade-name">Include Moving Truck</span>
-                <span class="upgrade-desc">26ft truck provided · +$150</span>
-              </div>
-            </label>
-            <label class="upgrade-item">
-              <input type="checkbox" class="upgrade-checkbox" data-addon="assembly" data-price="75">
-              <div class="upgrade-info">
-                <span class="upgrade-name">Bed Assembly / Disassembly</span>
-                <span class="upgrade-desc">All beds included · +$75</span>
-              </div>
-            </label>
-            <label class="upgrade-item">
-              <input type="checkbox" class="upgrade-checkbox" data-addon="stairs" data-price="50">
-              <div class="upgrade-info">
-                <span class="upgrade-name">Stairs Fee</span>
-                <span class="upgrade-desc">Per flight of stairs · +$50</span>
-              </div>
-            </label>
-          </div>
-          <!-- Price breakdown -->
-          <div class="price-summary">
-            <div class="price-line">
-              <span class="price-line-label" id="fmm-price-desc">Base Price (2 Bed, 2 movers, 4 hrs)</span>
-              <span class="price-line-value" id="fmm-base-price">$400</span>
-            </div>
-            <div class="price-line price-total-line">
-              <span class="price-line-label">Estimated Total</span>
-              <span class="price-total-value" id="fmm-total-price">$400</span>
-            </div>
-            <p class="price-deposit-note">Deposit to book: <strong>$75</strong> · Balance on move day · All equipment included</p>
-            <p class="price-overtime-note">Moves over the included hours billed at $100/hr</p>
-          </div>
-          <!-- Form (hidden fields, submit button) -->
-          <form id="fmm-quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="hidden" name="_subject" value="New Moving Quote — Fort Myers Movers">
-            <input type="hidden" id="fmm-h-move-type" name="move_type" value="local">
-            <input type="hidden" id="fmm-h-bedrooms" name="bedrooms" value="2">
-            <input type="hidden" id="fmm-h-name" name="name" value="">
-            <input type="hidden" id="fmm-h-email" name="email" value="">
-            <input type="hidden" id="fmm-h-phone" name="phone" value="">
-            <input type="hidden" id="fmm-h-date" name="move_date" value="">
-            <input type="hidden" id="fmm-h-from" name="moving_from" value="">
-            <input type="hidden" id="fmm-h-to" name="moving_to" value="">
-            <input type="hidden" id="fmm-h-addons" name="addons" value="">
-            <input type="hidden" id="fmm-h-total" name="estimated_total" value="$400">
-            <button type="button" id="fmm-submit-btn" class="btn btn-primary btn-primary-xl" style="width:100%;margin-bottom:12px">Get My Free Quote 🚚</button>
-          </form>
-          <!-- Success / Error states -->
-          <div id="fmm-form-success" style="display:none; text-align:center; padding:32px 16px">
-            <div style="font-size:3rem; margin-bottom:12px">✅</div>
-            <h3 style="color:var(--color-primary); margin:0 0 8px">Got it! We'll call you within 15 minutes.</h3>
-            <p style="color:var(--color-text-muted); font-size:0.9rem">Check your phone — we'll text you a confirmation, too.</p>
-          </div>
-          <div id="fmm-form-error" style="display:none; text-align:center; padding:16px; color:var(--color-warning)">
-            Something went wrong. Please call us at <a href="tel:+19044798844" style="color:var(--color-accent); font-weight:600">(904) 479-8844</a>.
-          </div>
-          <p class="form-urgency-note">⚡ Slots fill fast — booking locks in your date</p>
+          Base price includes 2–3 movers, loading/unloading, dollies, blankets, straps, and a guaranteed arrival window. Optional add-ons: truck arrangement, bed assembly, stairs fees, and packing service.
         </div>
       </div>
     </div>
