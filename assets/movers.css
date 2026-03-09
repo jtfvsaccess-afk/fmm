@@ -440,7 +440,7 @@ h1, h2, h3, h4, h5 {
   flex-shrink: 0;
 }
 .trust-item-sep {
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.75);
   padding: 0 20px;
   font-size: var(--font-size-sm);
   flex-shrink: 0;
@@ -946,6 +946,13 @@ h1, h2, h3, h4, h5 {
 .footer-brand .logo { color: #ffffff; margin-bottom: 16px; display: block; }
 .footer-brand p { font-size: var(--font-size-sm); line-height: 1.7; }
 .footer-col h4 {
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.footer-heading {
   color: #ffffff;
   font-size: var(--font-size-sm);
   text-transform: uppercase;
