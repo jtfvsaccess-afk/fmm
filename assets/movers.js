@@ -9,7 +9,7 @@ const CONFIG = {
   FORM_ENDPOINT: 'https://formspree.io/f/YOUR_FORM_ID',  // Replace with your Formspree ID
   PHONE_NUMBER:  '(904) 479-8844',
   PHONE_LINK:    'tel:+19044798844',
-  GA4_ID:        'G-XXXXXXXXXX',  // Replace with your GA4 Measurement ID
+  GA4_ID:        'G-9HT66TRLBB',  // Replace with your GA4 Measurement ID
   LEAD_VALUE:    75,              // $ per qualified lead (for GA4 conversion tracking)
 };
 
