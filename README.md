@@ -11,6 +11,17 @@
 
 ---
 
+## Recent Updates (Latest Commits)
+
+| Commit | Description |
+|--------|-------------|
+| `1bdaadd` | **fix:** correct relative asset paths in all blog pages — fixed `/blog/` subdirectory CSS/JS references |
+| `d2879ca` | **perf:** optimize analytics loading and fix font 404 errors — removed redundant GA4, added defer to GTM, updated font paths |
+| `b9677a0` | **feat(analytics):** install GA4 and GTM tracking across all 20 HTML pages |
+| `c836512` | **perf(pagespeed):** fix contrast, add main landmark, fix headings, defer JS — achieve 100 score |
+
+---
+
 ## Quick Start
 
 ```bash
