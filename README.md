@@ -64,16 +64,22 @@
 ## Quick Start
 
 ```bash
-# Preview locally
-open landing-page/index.html
+# Preview locally (main landing page)
+open index.html
 
-# Push to GitHub (auto-deploys to GitHub Pages)
+# Preview other pages
+open blog/index.html                        # Blog hub
+open labor-only-moving-fort-myers.html     # Service pillar
+open omvp-fmm-dashboard.html               # Project dashboard
+
+# Push to GitHub (auto-deploys)
 git add .
 git commit -m "feat: description"
 git push origin main
-# Live at: https://overnightmvp.github.io/FMM/
+# GitHub Pages: https://overnightmvp.github.io/FMM/
+# jtfvsaccess-afk: https://github.com/jtfvsaccess-afk/fmm
 
-# Deploy to Netlify (drag & drop alternative)
+# Deploy to Netlify (drag & drop)
 # → netlify.com/drop → drag fort-myers-movers/ folder
 ```
 
@@ -81,31 +87,22 @@ See `CLAUDE.md` for Claude Code session guidance.
 
 ---
 
-## Before Going Live: 4 Required Replacements
+## Before Going Live: Configuration Status
 
-1. **`landing-page/assets/movers.js`** line 9:
-   ```
-   FORM_ENDPOINT: 'https://formspree.io/f/YOUR_FORM_ID'
-   ```
-   → Replace `YOUR_FORM_ID` with actual Formspree form ID (all forms fail silently until fixed)
+| Item | Status | Details |
+|------|--------|---------|
+| **Formspree Form ID** | ✅ Configured | `assets/movers.js` line 9 → See `systems/launch-checklist.md` |
+| **Google Tag Manager** | ✅ Installed | Container ID: `GTM-NP2GZLLJ` (all 20 HTML files) |
+| **GA4 Measurement ID** | ✅ Installed | ID: `G-9HT66TRLBB` (assets/movers.js line 12) |
+| **GA4 GTM Configuration** | ⚠️ PENDING | **User must add GA4 Configuration tag in GTM UI** (see above) |
+| **Phone Number** | ✅ Configured | Fort Myers area code (239) in assets/movers.js line 10 |
 
-2. **`landing-page/index.html`** line 42 (GTM):
-   ```
-   'GTM-XXXXXXX'
-   ```
-   → Replace with actual Google Tag Manager container ID
-
-3. **`landing-page/assets/movers.js`** line 12:
-   ```
-   GA4_ID: 'G-XXXXXXXXXX'
-   ```
-   → Replace with actual GA4 Measurement ID (zero tracking until fixed)
-
-4. **`landing-page/assets/movers.js`** line 10:
-   ```
-   PHONE_NUMBER: '(904) 479-8844'
-   ```
-   → (904) is Jacksonville area code — Fort Myers is **(239)**. Get a Google Voice 239 number.
+**Live Deployment Checklist:**
+- ✅ All assets linked correctly (fonts, CSS, JS)
+- ✅ All 20 HTML pages have GA4 + GTM installed
+- ✅ Blog relative paths fixed
+- ⚠️ Awaiting GA4 Configuration tag in GTM (required for tracking)
+- ⚠️ Run PageSpeed Insights to verify performance improvements
 
 See `systems/launch-checklist.md` for full pre-launch verification.
 
@@ -115,45 +112,86 @@ See `systems/launch-checklist.md` for full pre-launch verification.
 
 ```
 fort-myers-movers/
-├── README.md                              ← This file
-├── llm.txt                                ← AI brand authority (GPTBot, ClaudeBot, Perplexity)
-├── robots.txt                             ← Explicit AI crawler permissions
-├── landing-page/
-│   ├── index.html                         ← Main conversion page (9 sections)
-│   └── assets/
-│       ├── movers.css                     ← Full design system (6-variable theming)
-│       └── movers.js                      ← Calculator + form + GA4
-├── content-pages/                         ← SEO pillar pages (6 cities/services)
-│   ├── labor-only-moving-fort-myers.html  ← Primary pillar
+├── 📄 ROOT LANDING PAGES (8 files)
+│   ├── index.html                         ← Main landing page (9 sections, quote form)
+│   ├── labor-only-moving-fort-myers.html  ← Primary service pillar
 │   ├── cape-coral-movers.html
 │   ├── bonita-springs-movers.html
 │   ├── naples-moving-help.html
 │   ├── loading-unloading-help.html
-│   └── packing-unpacking-fort-myers.html
-├── blog/                                  ← 8 SEO articles
-│   ├── how-to-hire-moving-labor-fort-myers.md
-│   ├── labor-only-vs-full-service-movers.md
-│   ├── average-cost-labor-only-moving-florida.md
-│   ├── moving-checklist-fort-myers.md
-│   ├── tips-loading-moving-truck.md
-│   ├── best-time-to-move-fort-myers.md
-│   ├── moving-cape-coral-fl.md
-│   └── pod-container-loading-service.md
-├── systems/
-│   ├── lead-routing-setup.md              ← Formspree → Zapier → Sheets → Contractor
-│   ├── launch-checklist.md               ← Pre-launch verification steps
-│   └── pricing-guide.md                  ← Rate card + contractor pricing
-├── docs/
-│   ├── design-system.md                  ← CSS token reference — all variables + components
-│   ├── brand-system.html                 ← Visual brand guide — open in browser
-│   ├── AI-VISIBILITY-STRATEGY.md         ← llm.txt / robots.txt / Schema.org playbook
-│   ├── SEO-CONTENT-STRATEGY.md           ← Keyword targets + content calendar
-│   ├── market-intel.md                   ← Competitor analysis + market data
-│   └── next-steps-roadmap.md             ← Week 1 → Month 3 action plan
-├── .planning/
-│   └── todos/                            ← GSD task tracking (pending/ and done/)
-└── ads/                                  ← (future: facebook-strategy.md, google-ads-strategy.md)
+│   ├── packing-unpacking-fort-myers.html
+│   ├── privacy-policy.html
+│   └── omvp-fmm-dashboard.html            ← Project management dashboard
+│
+├── 🎨 ASSETS (Design System)
+│   ├── assets/fonts.css                   ← Self-hosted Inter fonts (FIXED ✅)
+│   ├── assets/movers.css                  ← Full design system (6-variable theming)
+│   ├── assets/movers.js                   ← Quote calculator + form logic + GA4 tracking
+│   ├── assets/movers.min.css              ← Minified CSS
+│   └── assets/movers.min.js               ← Minified JS
+│
+├── 🔤 FONTS
+│   ├── fonts/inter.css                    ← Font loader
+│   └── fonts/Inter-*.woff2                ← 5 self-hosted font files (Regular, Medium, SemiBold, Bold, ExtraBold)
+│
+├── 📝 BLOG (9 articles + index)
+│   ├── blog/index.html
+│   ├── blog/average-cost-labor-only-moving-florida.html
+│   ├── blog/best-time-to-move-fort-myers.html
+│   ├── blog/how-to-hire-moving-labor-fort-myers.html
+│   ├── blog/labor-only-vs-full-service-movers.html
+│   ├── blog/moving-cape-coral-fl.html
+│   ├── blog/moving-checklist-fort-myers.html
+│   ├── blog/pod-container-loading-service.html
+│   ├── blog/tips-loading-moving-truck.html
+│   └── blog/*.md                          ← Source markdown versions
+│
+├── 📚 DOCUMENTATION
+│   ├── docs/design-system.md              ← CSS token reference — all variables + components
+│   ├── docs/brand-system.html             ← Visual brand guide — open in browser
+│   ├── docs/AI-VISIBILITY-STRATEGY.md     ← AI crawler optimization (llm.txt, robots.txt, Schema.org)
+│   ├── docs/SEO-CONTENT-STRATEGY.md       ← Keyword targets + content calendar
+│   ├── docs/market-intel.md               ← Competitor analysis + market data
+│   ├── docs/FMM-90-minute-execution.md    ← Quick start guide
+│   ├── docs/BOILERPLATE-NEW-CITY-ONBOARDING.md
+│   ├── docs/email-templates.md
+│   ├── docs/contractor-research.md
+│   └── docs/next-steps-roadmap.md         ← Week 1 → Month 3 action plan
+│
+├── 🔧 SYSTEMS & OPERATIONS
+│   ├── systems/lead-routing-setup.md      ← Formspree → Zapier → Sheets → Contractor
+│   ├── systems/launch-checklist.md        ← Pre-launch verification steps
+│   ├── systems/pricing-guide.md           ← Rate card + contractor pricing
+│   └── systems/success-metrics.md         ← KPIs and analytics tracking
+│
+├── 📋 PROJECT FILES
+│   ├── README.md                          ← This file
+│   ├── CLAUDE.md                          ← Project guidance for Claude Code
+│   ├── PERFORMANCE.md                     ← Performance optimization metrics
+│   └── .planning/                         ← GSD workflow files
+│       ├── STATE.md                       ← Project state tracking
+│       ├── phases/                        ← Phase plans (01, 02, 03)
+│       └── todos/                         ← Task tracking (pending/ and done/)
+│
+└── 📁 OTHER
+    ├── ads/                               ← (future: facebook-strategy.md, google-ads-strategy.md)
+    └── .git/                              ← Git repository (GitHub sync)
 ```
+
+---
+
+## Project Statistics
+
+| Category | Count | Status |
+|----------|-------|--------|
+| **HTML Pages** | 20 | ✅ GA4 + GTM installed |
+| **Blog Articles** | 9 | ✅ Paths fixed |
+| **Service Pages** | 6 | ✅ All optimized |
+| **Font Files** | 5 | ✅ Self-hosted (fixed paths) |
+| **CSS Files** | 2 | ✅ Main + minified |
+| **JS Files** | 2 | ✅ Main + minified |
+| **Documentation Files** | 10+ | ✅ Current |
+| **System Guides** | 4 | ✅ Complete |
 
 ---
 
@@ -173,27 +211,29 @@ The current live site (React/Hostinger) is invisible to GPTBot, ClaudeBot, and P
 
 ## Theming for New Markets
 
-To replicate for a new city, update 6 CSS variables + find/replace city names:
+To replicate for a new city, update 6 CSS variables in `assets/movers.css` + find/replace city names:
 
 ```css
-/* movers.css — change these 6 lines to rebrand */
---color-primary:      #1e3a8a;   /* Main brand color */
---color-primary-dark: #1a3070;
---color-accent:       #f97316;   /* CTA button color */
---color-accent-hover: #ea6c0a;
---color-trust:        #16a34a;   /* Trust bar color */
+/* assets/movers.css — change these 6 lines to rebrand for new city */
+--color-primary:      #1e3a8a;   /* Main brand color (navy) */
+--color-primary-dark: #1a3070;   /* Hover state */
+--color-accent:       #f97316;   /* CTA button color (orange) */
+--color-accent-hover: #ea6c0a;   /* Button hover */
+--color-trust:        #16a34a;   /* Trust bar background (green) */
 --font-family: 'Inter', sans-serif;
 ```
 
-Then:
-1. Find/replace: `Fort Myers` → `[New City]`
-2. Find/replace: `(904) 479-8844` → `[New Phone]`
-3. Update Schema.org `areaServed` arrays
-4. Update `llm.txt` with new city info
-5. New Formspree form ID
-6. Push to new repo/subdirectory
+**Replication Checklist:**
+1. Update 6 CSS variables in `assets/movers.css`
+2. Find/replace: `Fort Myers` → `[New City]`
+3. Find/replace: `(239) phone number` → `[New Area Code]`
+4. Update Schema.org `areaServed` arrays in all HTML files
+5. Create new Formspree form ID (assets/movers.js line 9)
+6. Create new GTM container (if needed) or reuse existing
+7. Update `docs/` files with new market data
+8. Push to new GitHub repo/subdirectory
 
-Estimated: 2–3 hours per new city.
+**Estimated effort:** 2–3 hours per new city (template-driven deployment)
 
 ---
 
